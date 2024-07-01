@@ -29,6 +29,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "github-dependency-graph-gradle-plugin"
+rootProject.name = "github-dependency-graph-gradle-plugin-codeql-testing"
 include("plugin")
 include("plugin-test")
