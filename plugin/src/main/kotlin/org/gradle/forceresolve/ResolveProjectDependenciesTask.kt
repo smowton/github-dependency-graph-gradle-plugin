@@ -21,5 +21,6 @@ abstract class ResolveProjectDependenciesTask: AbstractResolveProjectDependencie
         for (configuration in configurationResolvers.get()) {
             configuration.get()
         }
+        ExportConfigurationArtifacts().export(project)
     }
 }

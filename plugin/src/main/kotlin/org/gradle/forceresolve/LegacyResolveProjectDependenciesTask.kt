@@ -11,5 +11,6 @@ abstract class LegacyResolveProjectDependenciesTask: AbstractResolveProjectDepen
         for (configuration in getReportableConfigurations()) {
             configuration.incoming.resolutionResult.root
         }
+        ExportConfigurationArtifacts().export(project)
     }
 }
