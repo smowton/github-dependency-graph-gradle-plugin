@@ -32,7 +32,7 @@ val releaseVersion = loadReleaseVersion()
 val releaseNotes = loadReleaseNotes()
 val releaseTag = "v${releaseVersion}"
 val pluginGroup = "org.gradle"
-val pluginArtifactId = "github-dependency-graph-gradle-plugin-codeql-testing"
+val pluginArtifactId = "github-dependency-graph-gradle-plugin-codeql-fork"
 
 group = pluginGroup
 version = releaseVersion
