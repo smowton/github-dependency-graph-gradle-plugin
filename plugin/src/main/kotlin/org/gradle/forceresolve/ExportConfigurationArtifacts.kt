@@ -18,7 +18,7 @@ class ExportConfigurationArtifacts {
     fun export(project: Project) {
         val report = project.configurations.filter { it.isCanBeResolved && it.name.endsWith("Classpath") }.associate {
             try {
-                val artifacts = it.resolvedConfiguration.resolvedArtifacts.map { it2 ->
+                val artifacts = it.resolvedConfiguration.lenientConfiguration.artifacts.map { it2 ->
                     ArtifactDescriptor(
                         it2.moduleVersion.id.group,
                         it2.moduleVersion.id.name,
