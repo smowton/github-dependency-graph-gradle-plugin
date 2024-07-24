@@ -8,6 +8,10 @@ import org.gradle.work.DisableCachingByDefault
 
 @DisableCachingByDefault(because = "Not worth caching")
 abstract class ResolveProjectDependenciesTask: AbstractResolveProjectDependenciesTask() {
+    init {
+        this.notCompatibleWithConfigurationCache("Need to work out how to marry LenientConfiguration and the configuration cache")
+    }
+
     private val configurationResolvers = Cached.of { createConfigurationResolvers() }
 
     private fun createConfigurationResolvers(): List<Provider<ResolvedComponentResult>> {
