@@ -38,6 +38,9 @@ class ExportConfigurationArtifacts {
             val fileNamePrefix = pluginParams.load("GITHUB_DEPENDENCY_GRAPH_JOB_CORRELATOR")
             val fileNumber = uniqueFileNumber.getAndIncrement()
             val outputFile = File(outputDir, "$fileNamePrefix-configurations-$fileNumber.json")
+            try {
+                File(outputDir).mkdirs()
+            } catch (e: Exception) { }
             val reportJson = JacksonJsonSerializer.serializeToJson(report)
             outputFile.writeText(reportJson)
         }
